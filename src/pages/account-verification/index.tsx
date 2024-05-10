@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { Button, Divider, IconButton, Step, StepContent, StepLabel, Stepper } from '@mui/material'
+import { Button, Divider, IconButton } from '@mui/material'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
@@ -14,22 +14,6 @@ const AccountVerification = () => {
     height: "80%",
     borderRadius: "25px"
   }));
-
-  const steps = [
-    {
-      label: 'Add Account Details',
-      description: `Your company or organisation details`,
-    },
-    {
-      label: 'Upload Documents',
-      description:
-        'Submit business or organisation document proof',
-    },
-    {
-      label: 'Verification Status',
-      description: `Once verified, your payments will get activated`,
-    },
-  ];
 
   return (
     <>
