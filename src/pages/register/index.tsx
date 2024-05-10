@@ -6,20 +6,15 @@ import Link from 'next/link'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
-
-// import Divider from '@mui/material/Divider'
-
-// import Checkbox from '@mui/material/Checkbox'
+import Divider from '@mui/material/Divider'
+import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
-
-// import IconButton from '@mui/material/IconButton'
+import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
-
-// import InputAdornment from '@mui/material/InputAdornment'
-
-// import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
+import InputAdornment from '@mui/material/InputAdornment'
+import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
 
 // ** Custom Component Import
 import CustomTextField from 'src/@core/components/mui/text-field'
@@ -34,53 +29,50 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
-// import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
 // ** Styled Components
 const RegisterIllustration = styled('img')(({ theme }) => ({
   zIndex: 2,
-  marginTop: theme.spacing(6),
-  marginBottom: theme.spacing(8),
-  width: '90%',
-
+  maxHeight: 600,
+  marginTop: theme.spacing(12),
+  marginBottom: theme.spacing(12),
   [theme.breakpoints.down(1540)]: {
-    maxHeight: 670
+    maxHeight: 550
   },
   [theme.breakpoints.down('lg')]: {
-    maxHeight: 610
+    maxHeight: 500
   }
 }))
 
 const RightWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('md')]: {
-    maxWidth: 190
+    maxWidth: 450
   },
   [theme.breakpoints.up('lg')]: {
-    maxWidth: 350
+    maxWidth: 600
   },
   [theme.breakpoints.up('xl')]: {
-    maxWidth: 550
+    maxWidth: 750
   }
 }))
 
-const LinkStyled = styled(Link)(({ }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
-  fontWeight: 20,
-  color: `black} !important`
+  color: `${theme.palette.primary.main} !important`
 }))
 
-// const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ theme }) => ({
-//   marginTop: theme.spacing(1.5),
-//   marginBottom: theme.spacing(1.75),
-//   '& .MuiFormControlLabel-label': {
-//     color: theme.palette.text.secondary
-//   }
-// }))
+const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ theme }) => ({
+  marginTop: theme.spacing(1.5),
+  marginBottom: theme.spacing(1.75),
+  '& .MuiFormControlLabel-label': {
+    color: theme.palette.text.secondary
+  }
+}))
 
 const Register = () => {
   // ** States
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
@@ -91,11 +83,10 @@ const Register = () => {
   // ** Vars
   const { skin } = settings
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'auth-v2-register-illustration'
 
   return (
-    <Box className='content-right' sx={{ backgroundColor: '#FFF', boxShadow: '0px 0px 12px 0px #EDF0F6' }}>
+    <Box className='content-right' sx={{ backgroundColor: 'background.paper' }}>
       {!hidden ? (
         <Box
           sx={{
@@ -105,69 +96,44 @@ const Register = () => {
             alignItems: 'center',
             borderRadius: '20px',
             justifyContent: 'center',
-            height: '100%',
-            width: '90%',
-
-            // backgroundColor: 'customColors.bodyBg',
-            // margin: theme => theme.spacing(8, 0, 8, 8)
+            backgroundColor: 'customColors.bodyBg',
+            margin: theme => theme.spacing(8, 0, 8, 8),
+            backgroundImage: `url(/images/pages/login.png)`,
           }}
         >
-          <RegisterIllustration
-            alt='register-illustration'
-            src={`/images/pages/signup.png`}
-          />
-          {/* <FooterIllustrationsV2 /> */}
+          <Box sx={{ my: 6, textAlign: "center" }}>
+            <Typography variant='h3' sx={{ mb: 1.5 }}>
+              {`Cross Border Payments`}
+            </Typography>
+            <Typography variant='h5' sx={{ mb: 1.5 }}>
+              {`made simple and seamless`}
+            </Typography>
+          </Box>
         </Box>
       ) : null}
       <RightWrapper>
         <Box
           sx={{
-            p: [0, 0],
+            p: [6, 12],
             height: '100%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            width: '70%'
+            justifyContent: 'center'
           }}
         >
-          <Box sx={{ width: '100%', maxWidth: 450 }}>
-            {/* <svg width={34} viewBox='0 0 32 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                fill={theme.palette.primary.main}
-                d='M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z'
-              />
-              <path
-                fill='#161616'
-                opacity={0.06}
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z'
-              />
-              <path
-                fill='#161616'
-                opacity={0.06}
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z'
-              />
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                fill={theme.palette.primary.main}
-                d='M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z'
-              />
-            </svg>*/}
+          <Box sx={{ width: '100%', maxWidth: 400 }}>
             <Box sx={{ my: 6 }}>
               <Typography variant='h3' sx={{ mb: 6 }}>
                 <b>STABL</b>  Pay
+                {/* {`Welcome to ${themeConfig.templateName}! 👋🏻`} */}
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>Create your STABLE PAY account</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                Create your STABL PAY account
+              </Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
-              <CustomTextField autoFocus fullWidth sx={{ mb: 8 }} label='Mention your Full Name*' placeholder='' />
-              <CustomTextField fullWidth label='Enter Username or Email ID*' sx={{ mb: 8 }} placeholder='' />
+              <CustomTextField autoFocus fullWidth sx={{ mb: 3 }} label='Mention your Full Name*' placeholder='' />
+              <CustomTextField fullWidth label='Enter Username or Email ID*' sx={{ mb: 3 }} placeholder='' />
               <CustomTextField
                 sx={{ mb: 8 }}
                 fullWidth
@@ -200,41 +166,21 @@ const Register = () => {
                   </Typography>
                 </Box>
               </Box>
-
-              {/* <FormControlLabel
-                control={<Checkbox />}
-                sx={{ mb: 4, mt: 1.5, '& .MuiFormControlLabel-label': { fontSize: theme.typography.body2.fontSize } }}
-                label={
-                  <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Typography sx={{ color: 'text.secondary' }}>I agree to</Typography>
-                    <Typography component={LinkStyled} href='/' onClick={e => e.preventDefault()} sx={{ ml: 1 }}>
-                      privacy policy & terms
-                    </Typography>
-                  </Box>
-                }
-              /> */}
               <Button fullWidth type='submit' variant='outlined' sx={{ mb: 4 }}>
                 <Typography>Sign up</Typography>
               </Button>
-              <Typography sx={{ mb: 4, fontWeight: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>or</Typography>
+              <Divider
+                sx={{
+                  color: 'text.disabled',
+                  '& .MuiDivider-wrapper': { px: 6 },
+                  fontSize: theme.typography.body2.fontSize,
+                  my: theme => `${theme.spacing(6)} !important`
+                }}
+              >
+                or
+              </Divider>
               <Button fullWidth type='submit' variant='outlined' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 8 }}>
-                {/* <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>
-                  <Icon icon='mdi:facebook' />
-                </IconButton>
-                <IconButton href='/' component={Link} sx={{ color: '#1da1f2' }} onClick={e => e.preventDefault()}>
-                  <Icon icon='mdi:twitter' />
-                </IconButton>
-                <IconButton
-                  href='/'
-                  component={Link}
-                  onClick={e => e.preventDefault()}
-                  sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
-                >
-                  <Icon icon='mdi:github' />
-                </IconButton> */}
-                {/* <IconButton href='/' component={Link} sx={{ color: 'green' }} onClick={e => e.preventDefault()}> */}
                 <Icon color='green' icon='mdi:google' />
-                {/* </IconButton> */}
                 <Typography sx={{ ml: 2 }}>Sign up with google account</Typography>
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
