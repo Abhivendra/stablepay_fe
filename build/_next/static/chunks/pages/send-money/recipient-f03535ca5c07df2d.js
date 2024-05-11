@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[551],{8770:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/send-money/recipient",function(){return e(9890)}])}},function(n){n.O(0,[886,903,536,890,774,888,179],function(){return n(n.s=8770)}),_N_E=n.O()}]);

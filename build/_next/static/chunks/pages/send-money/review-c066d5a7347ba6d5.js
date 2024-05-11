@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[800],{1052:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/send-money/review",function(){return e(1267)}])}},function(n){n.O(0,[886,267,774,888,179],function(){return n(n.s=1052)}),_N_E=n.O()}]);
