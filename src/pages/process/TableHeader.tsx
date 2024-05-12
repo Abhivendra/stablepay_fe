@@ -1,45 +1,7 @@
-import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
-const TableHeader = () => {
-
-  const [connectedToWallet, setConnectedToWallet] = useState<boolean>(false);
-  const [defaultAccount, setDefaultAccount] = useState<string>('');
-
-  console.log(defaultAccount);
-
-  useEffect(() => {
-    const adminWallet = window.localStorage.getItem('admin-wallet');
-
-    if (adminWallet) {
-      setDefaultAccount(adminWallet);
-      setConnectedToWallet(true);
-    }
-  }, []);
-
-  const accountChangeHandler = (newAccount: string) => {
-    setDefaultAccount(newAccount);
-    setConnectedToWallet(true);
-    window.localStorage.setItem("admin-wallet", newAccount);
-  }
-
-
-  const conectWallet = () => {
-    if (connectedToWallet) {
-      return;
-    }
-    const initializeProvider = async () => {
-      if ((window as any).ethereum) {
-        (window as any).ethereum.request({ method: 'eth_requestAccounts' }).then((result: any) => {
-          accountChangeHandler(result[0]);
-        })
-      } else {
-        console.log("Please install a wallet...");
-      }
-    };
-    initializeProvider();
-  }
+const TableHeader = ({ conectWallet, connectedToWallet }: any) => {
 
   return (
     <Box

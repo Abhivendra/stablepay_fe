@@ -38,6 +38,7 @@
     "apexcharts-clevision": "3.28.5",
     "axios": "1.4.0",
     "axios-mock-adapter": "1.21.4",
+    "bignumber": "^1.1.0",
     "bootstrap-icons": "1.10.5",
     "chart.js": "4.3.0",
     "cleave.js": "1.6.0",
