@@ -95,9 +95,11 @@ const AuthProvider = ({ children }: Props) => {
 
   const handleLogout = () => {
     setUser(null)
-    window.localStorage.removeItem('userData')
-    window.localStorage.removeItem(authConfig.storageTokenKeyName)
-    router.push('/login')
+    window.localStorage.removeItem('userData');
+    window.localStorage.removeItem(authConfig.storageTokenKeyName);
+    window.localStorage.removeItem('admin-wallet');
+    window.localStorage.removeItem('account-verified');
+    router.push('/login');
   }
 
   const values = {

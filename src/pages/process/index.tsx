@@ -1,265 +1,201 @@
 // ** React Imports
-import { useState, useEffect, MouseEvent, useCallback } from 'react'
+import { useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
-import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Menu from '@mui/material/Menu'
 import Grid from '@mui/material/Grid'
-import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
-import { SelectChangeEvent } from '@mui/material/Select'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Store Imports
-import { useDispatch, useSelector } from 'react-redux'
-
-// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
-import CustomAvatar from 'src/@core/components/mui/avatar'
-import CustomTextField from 'src/@core/components/mui/text-field'
 import CardStatsHorizontalWithDetails from 'src/@core/components/card-statistics/card-stats-horizontal-with-details'
-
-// ** Utils Import
-import { getInitials } from 'src/@core/utils/get-initials'
-
-// ** Third Party Components
-import axios from 'axios'
-
-import { ThemeColor } from 'src/@core/layouts/types'
 import { CardStatsHorizontalWithDetailsProps } from 'src/@core/components/card-statistics/types'
 
 // ** Custom Table Components Imports
 import TableHeader from './TableHeader'
-
-interface UserRoleType {
-  [key: string]: { icon: string; color: string }
-}
-
-interface UserStatusType {
-  [key: string]: ThemeColor
-}
-// ** renders client column
-const userRoleObj: UserRoleType = {
-  admin: { icon: 'tabler:device-laptop', color: 'secondary' },
-  author: { icon: 'tabler:circle-check', color: 'success' },
-  editor: { icon: 'tabler:edit', color: 'info' },
-  maintainer: { icon: 'tabler:chart-pie-2', color: 'primary' },
-  subscriber: { icon: 'tabler:user', color: 'warning' }
-}
-
-const userStatusObj: UserStatusType = {
-  active: 'success',
-  pending: 'warning',
-  inactive: 'secondary'
-}
-
-const RowOptions = ({ id }: { id: number | string }) => {
-
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const rowOptionsOpen = Boolean(anchorEl)
-
-  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleRowOptionsClose = () => {
-    setAnchorEl(null)
-  }
-
-  const handleDelete = () => {
-    handleRowOptionsClose()
-  }
-
-  return (
-    <>
-      <IconButton size='small' onClick={handleRowOptionsClick}>
-        <Icon icon='tabler:dots-vertical' />
-      </IconButton>
-      <Menu
-        keepMounted
-        anchorEl={anchorEl}
-        open={rowOptionsOpen}
-        onClose={handleRowOptionsClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        PaperProps={{ style: { minWidth: '8rem' } }}
-      >
-        <MenuItem
-          component={Link}
-          sx={{ '& svg': { mr: 2 } }}
-          href='/apps/user/view/account'
-          onClick={handleRowOptionsClose}
-        >
-          <Icon icon='tabler:eye' fontSize={20} />
-          View
-        </MenuItem>
-        <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
-          <Icon icon='tabler:edit' fontSize={20} />
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleDelete} sx={{ '& svg': { mr: 2 } }}>
-          <Icon icon='tabler:trash' fontSize={20} />
-          Delete
-        </MenuItem>
-      </Menu>
-    </>
-  )
-}
-
-const columns: GridColDef[] = [
-  {
-    flex: 0.25,
-    minWidth: 280,
-    field: 'fullName',
-    headerName: 'Sender',
-    renderCell: ({ row }) => {
-      const { fullName, email } = row
-
-      return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Typography
-              noWrap
-              component={Link}
-              href='/apps/user/view/account'
-              sx={{
-                fontWeight: 500,
-                textDecoration: 'none',
-                color: 'text.secondary',
-                '&:hover': { color: 'primary.main' }
-              }}
-            >
-              {fullName}
-            </Typography>
-            <Typography noWrap variant='body2' sx={{ color: 'text.disabled' }}>
-              {email}
-            </Typography>
-          </Box>
-        </Box>
-      )
-    }
-  },
-  {
-    flex: 0.15,
-    field: 'role',
-    minWidth: 170,
-    headerName: 'Amount',
-    renderCell: ({ row }) => {
-      return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <CustomAvatar
-            skin='light'
-            sx={{ mr: 4, width: 30, height: 30 }}
-            color={(userRoleObj[row.role].color as ThemeColor) || 'primary'}
-          >
-            <Icon icon={userRoleObj[row.role].icon} />
-          </CustomAvatar>
-          <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
-            {row.role}
-          </Typography>
-        </Box>
-      )
-    }
-  },
-  {
-    flex: 0.15,
-    minWidth: 120,
-    headerName: 'Receiver',
-    field: 'currentPlan',
-    renderCell: ({ row }) => {
-      return (
-        <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary', textTransform: 'capitalize' }}>
-          {row.currentPlan}
-        </Typography>
-      )
-    }
-  },
-  {
-    flex: 0.15,
-    minWidth: 190,
-    field: 'billing',
-    headerName: 'Amount',
-    renderCell: ({ row }) => {
-      return (
-        <Typography noWrap sx={{ color: 'text.secondary' }}>
-          {row.billing}
-        </Typography>
-      )
-    }
-  },
-  {
-    flex: 0.1,
-    minWidth: 110,
-    field: 'status',
-    headerName: 'Status',
-    renderCell: ({ row }) => {
-      return (
-        <CustomChip
-          rounded
-          skin='light'
-          size='small'
-          label={row.status}
-          color={userStatusObj[row.status]}
-          sx={{ textTransform: 'capitalize' }}
-        />
-      )
-    }
-  },
-  {
-    flex: 0.1,
-    minWidth: 100,
-    sortable: false,
-    field: 'actions',
-    headerName: 'Actions',
-    renderCell: ({ row }) => <RowOptions id={row.id} />
-  }
-]
+import { Button, List, ListItem } from '@mui/material'
+import moment from 'moment';
 
 const UserList = ({ apiData }: any) => {
-  // ** State
-  const [role, setRole] = useState<string>('')
-  const [plan, setPlan] = useState<string>('')
-  const [value, setValue] = useState<string>('')
-  const [status, setStatus] = useState<string>('')
-  const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
   const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 10 })
+  const [remittanceTrail, setRemittanceTrail] = useState([{
+    time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+    message: "1.3 M KES received from customer"
+  }])
 
-  const handleFilter = useCallback((val: string) => {
-    setValue(val)
-  }, [])
+  const [processData, setProcessData] = useState([
+    {
+      "id": 1,
+      "sender": "Micheal",
+      "senderAmount": "1.3M KES",
+      "receiver": "Nuryanti",
+      "receiverAmount": "160M IDR",
+      "status": "INITIATEDFROMCUSTOMER"
+    }
+  ])
 
-  const handleRoleChange = useCallback((e: SelectChangeEvent<unknown>) => {
-    setRole(e.target.value as string)
-  }, [])
+  const handleOnRamp = () => {
+    setProcessData((prev: any) => {
+      prev[0].status = "ONRAMP";
 
-  const handlePlanChange = useCallback((e: SelectChangeEvent<unknown>) => {
-    setPlan(e.target.value as string)
-  }, [])
+      return prev;
+    });
+    setRemittanceTrail((prev: any) => {
+      return [...prev, {
+        time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        message: "1.3 M KES converted to 10000 USDT"
+      }];
+    });
 
-  const handleStatusChange = useCallback((e: SelectChangeEvent<unknown>) => {
-    setStatus(e.target.value as string)
-  }, [])
+    setTimeout(() => {
+      setRemittanceTrail((prev: any) => {
+        return [...prev, {
+          time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+          message: "On Ramp partner sent 9950 USDT (deducted 0.45% fee)"
+        }];
+      });
+    }, 5000)
 
-  const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
+  }
+  const handleTransfer = () => {
+    setProcessData((prev: any) => {
+      prev[0].status = "TRANSFERRED";
+
+      return prev;
+    });
+    setRemittanceTrail((prev: any) => {
+
+      return [...prev, {
+        time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        message: "Transferred  9750 USDT (deducted 2% fee) from Kenya treasury wallet"
+      }];
+    })
+  }
+  const handleOffRamp = () => {
+    setProcessData((prev: any) => {
+      prev[0].status = "DONE";
+
+      return prev;
+    });
+    setRemittanceTrail((prev: any) => {
+      return [...prev, {
+        time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        message: "Received 9750 USDT in Indonesia treasury wallet"
+      }];
+    })
+    setTimeout(() => {
+      setRemittanceTrail((prev: any) => {
+        return [...prev, {
+          time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+          message: "Transferred 9750 USDT to Off Ramp partner"
+        }];
+      })
+    }, 5000)
+    setTimeout(() => {
+      setRemittanceTrail((prev: any) => {
+        return [...prev, {
+          time: moment().format('MMMM Do YYYY, h:mm:ss a'),
+          message: "Off Ramp partner transferred 9700 equivalent in IDR to recipient(deducted 0.45% fee)"
+        }];
+      });
+    }, 5000)
+
+  }
+
+  const columns: GridColDef[] = [
+    {
+      flex: 0.1,
+      minWidth: 250,
+      field: 'sender',
+      headerName: 'Sender',
+      renderCell: ({ row }) => {
+        return (
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
+              <Typography
+                noWrap
+                component={Link}
+                href='/apps/user/view/account'
+                sx={{
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  color: 'text.secondary',
+                  '&:hover': { color: 'primary.main' }
+                }}
+              >
+                {row?.sender}
+              </Typography>
+            </Box>
+          </Box>
+        )
+      }
+    },
+    {
+      flex: 0.1,
+      minWidth: 120,
+      headerName: 'Sender Amount',
+      field: 'senderAmount',
+      renderCell: ({ row }) => {
+        return (
+          <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary', textTransform: 'capitalize' }}>
+            {row.senderAmount}
+          </Typography>
+        )
+      }
+    },
+    {
+      flex: 0.1,
+      minWidth: 120,
+      headerName: 'Receiver',
+      field: 'receiver',
+      renderCell: ({ row }) => {
+        return (
+          <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary', textTransform: 'capitalize' }}>
+            {row.receiver}
+          </Typography>
+        )
+      }
+    },
+    {
+      flex: 0.15,
+      minWidth: 190,
+      field: 'receiverAmount',
+      headerName: 'Receiver Amount',
+      renderCell: ({ row }) => {
+        return (
+          <Typography noWrap sx={{ color: 'text.secondary' }}>
+            {row.receiverAmount}
+          </Typography>
+        )
+      }
+    },
+    {
+      flex: 0.1,
+      minWidth: 100,
+      sortable: false,
+      field: 'actions',
+      headerName: 'Actions',
+      renderCell: ({ row }) => {
+        if (row?.status == "INITIATEDFROMCUSTOMER") {
+          return <Button onClick={handleOnRamp}>On Ramp</Button>
+        } else if (row?.status == "ONRAMP") {
+          return <Button onClick={handleTransfer}>Tranfer</Button>
+        } else if (row?.status == "TRANSFERRED") {
+          return <Button onClick={handleOffRamp}>Off Ramp</Button>
+        } else if (row?.status == "DONE") {
+          return (
+            <Typography noWrap sx={{ color: 'text.secondary' }}>
+              {"Done"}
+            </Typography>
+          )
+        }
+
+        return (<></>)
+      }
+    }
+  ]
 
   return (
     <Grid container spacing={6.5}>
@@ -282,14 +218,32 @@ const UserList = ({ apiData }: any) => {
           <DataGrid
             autoHeight
             rowHeight={62}
-            rows={[]}
+            rows={processData}
             columns={columns}
             disableRowSelectionOnClick
             pageSizeOptions={[10, 25, 50]}
+            hideFooterPagination={true}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
           />
         </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <List sx={{ width: '100%', maxWidth: 700, bgcolor: 'background.paper' }}>
+          {remittanceTrail?.map((value, index) => (
+            <ListItem
+              key={index}
+              disableGutters
+            >
+              <Typography noWrap sx={{ color: "#141516" }}>
+                {`${value?.time} : `}
+              </Typography>
+              <Typography noWrap sx={{ color: 'text.secondary' }}>
+                {` ${value?.message}`}
+              </Typography>
+            </ListItem>
+          ))}
+        </List>
       </Grid>
     </Grid>
   )

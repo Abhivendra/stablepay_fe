@@ -1,23 +1,44 @@
-// ** MUI Imports
+import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
-// ** Custom Component Import
-import CustomTextField from 'src/@core/components/mui/text-field'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-interface TableHeaderProps {
-  value: string
-  toggle: () => void
-  handleFilter: (val: string) => void
-}
-
 const TableHeader = () => {
 
-  const conectWallet = () => {
+  const [connectedToWallet, setConnectedToWallet] = useState<boolean>(false);
+  const [defaultAccount, setDefaultAccount] = useState<string>('');
 
+  console.log(defaultAccount);
+
+  useEffect(() => {
+    const adminWallet = window.localStorage.getItem('admin-wallet');
+
+    if (adminWallet) {
+      setDefaultAccount(adminWallet);
+      setConnectedToWallet(true);
+    }
+  }, []);
+
+  const accountChangeHandler = (newAccount: string) => {
+    setDefaultAccount(newAccount);
+    setConnectedToWallet(true);
+    window.localStorage.setItem("admin-wallet", newAccount);
+  }
+
+
+  const conectWallet = () => {
+    if (connectedToWallet) {
+      return;
+    }
+    const initializeProvider = async () => {
+      if ((window as any).ethereum) {
+        (window as any).ethereum.request({ method: 'eth_requestAccounts' }).then((result: any) => {
+          accountChangeHandler(result[0]);
+        })
+      } else {
+        console.log("Please install a wallet...");
+      }
+    };
+    initializeProvider();
   }
 
   return (
@@ -34,7 +55,7 @@ const TableHeader = () => {
     >
       <Box sx={{ rowGap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <Button onClick={conectWallet} variant='contained' sx={{ '& svg': { mr: 2 } }}>
-          Connect Wallet
+          {connectedToWallet ? 'Wallet Connected' : 'Connect Wallet'}
         </Button>
       </Box>
     </Box>
