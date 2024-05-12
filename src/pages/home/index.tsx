@@ -38,7 +38,6 @@ const Home = () => {
       <Grid container sx={{ mb: 8, background: '#FBFCFF' }}>
         <Grid item xs={12}>
           <Card sx={{ height: "100%", width: "80%", background: "#FFF", boxShadow: "0px 0px 8px 0px #EEF1F9" }}>
-            <CardHeader></CardHeader>
             <CardContent>
               <Grid container spacing={6} sx={{ background: "#FFF" }}>
                 <Grid item xs={6}>

@@ -11,7 +11,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Payments',
-      path: '/payments',
+      path: '/send-money',
 
       // icon: 'tabler:payment',
     },
@@ -27,6 +27,12 @@ const navigation = (): VerticalNavItemsType => {
 
       // icon: 'tabler:mail',
     },
+    {
+      title: 'Process Payment',
+      path: '/process',
+
+      // icon: 'tabler:mail',
+    }
 
     // {
     //   path: '/acl',
