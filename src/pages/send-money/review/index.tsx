@@ -42,7 +42,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 24,
                 fontFamily: 'Figtree',
                 fontWeight: '700',
-              }}>100</Typography>
+              }}>1.3M</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -51,7 +51,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 16,
                 fontFamily: 'Figtree',
                 fontWeight: '600',
-              }}>SGD</Typography>
+              }}>KES</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
                 <Icon icon='tabler:chevron-down' fontSize={20} />
               </IconButton>
@@ -73,7 +73,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>100 SGD</Typography>
+              }}>290 USD</Typography>
             </Grid>
           </Grid>
 
@@ -92,7 +92,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>100 SGD</Typography>
+              }}>9710 USD</Typography>
             </Grid>
           </Grid>
 
@@ -111,7 +111,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '600',
-              }}>564.70 INR</Typography>
+              }}>160M IDR</Typography>
             </Grid>
 
           </Grid>
@@ -140,7 +140,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>Apply Studio</Typography>
+              }}>Nuryanti</Typography>
             </Grid>
           </Grid>
 
@@ -151,7 +151,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>UPI ID</Typography>
+              }}>Account No</Typography>
             </Grid>
             <Grid item xs={4} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -159,7 +159,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>apple.st@HSBCBank</Typography>
+              }}>98383838383</Typography>
             </Grid>
           </Grid>
 
@@ -178,7 +178,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>apple.studio@gmail.com</Typography>
+              }}>Nuryanti@gmail.com</Typography>
             </Grid>
           </Grid>
 
@@ -197,7 +197,7 @@ const ReviewPage = (props: any) => {
                 fontSize: 18,
                 fontFamily: 'Figtree',
                 fontWeight: '400',
-              }}>HSBC Bank</Typography>
+              }}>Bank Mandiri</Typography>
             </Grid>
           </Grid>
         </Box>

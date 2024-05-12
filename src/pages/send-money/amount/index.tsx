@@ -44,7 +44,7 @@ const AmountPage = (props: any) => {
                 fontSize: 24,
                 fontFamily: 'Figtree',
                 fontWeight: '700',
-              }}>100</Typography>
+              }}>1.3M</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -53,7 +53,7 @@ const AmountPage = (props: any) => {
                 fontSize: 16,
                 fontFamily: 'Figtree',
                 fontWeight: '600',
-              }}>SGD</Typography>
+              }}>KES</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
                 <Icon icon='tabler:chevron-down' fontSize={20} />
               </IconButton>
@@ -89,7 +89,7 @@ const AmountPage = (props: any) => {
                 fontSize: 24,
                 fontFamily: 'Figtree',
                 fontWeight: '700',
-              }}>10</Typography>
+              }}>290</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -97,7 +97,7 @@ const AmountPage = (props: any) => {
                 fontSize: 16,
                 fontFamily: 'Figtree',
                 fontWeight: '600',
-              }}>SGD</Typography>
+              }}>USD</Typography>
               <IconButton />
             </Grid>
           </Grid>
@@ -124,7 +124,7 @@ const AmountPage = (props: any) => {
                 fontSize: 24,
                 fontFamily: 'Figtree',
                 fontWeight: '700',
-              }}>90</Typography>
+              }}>160M</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -132,7 +132,7 @@ const AmountPage = (props: any) => {
                 fontSize: 16,
                 fontFamily: 'Figtree',
                 fontWeight: '600',
-              }}>SGD</Typography>
+              }}>IDR</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
                 <Icon icon='tabler:chevron-down' fontSize={20} />
               </IconButton>

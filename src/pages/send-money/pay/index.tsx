@@ -8,15 +8,7 @@ const paymentTypes = [
     data: [
       {
         icon: "tabler:chevron-down",
-        title: "Gpay"
-      },
-      {
-        icon: "tabler:chevron-down",
-        title: "Phonepe"
-      },
-      {
-        icon: "tabler:chevron-down",
-        title: "Paytm"
+        title: "mPesa"
       }
     ]
   },

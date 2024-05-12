@@ -85,7 +85,7 @@ const Register = () => {
           <Box sx={{ width: '100%', maxWidth: 400 }}>
             <Box sx={{ my: 6 }}>
               <Typography variant='h3' sx={{ mb: 6 }}>
-                <b>STABL</b>  Pay
+                <b>Stabl</b>PAY
                 {/* {`Welcome to ${themeConfig.templateName}! 👋🏻`} */}
               </Typography>
               <Typography sx={{ color: 'text.secondary' }}>

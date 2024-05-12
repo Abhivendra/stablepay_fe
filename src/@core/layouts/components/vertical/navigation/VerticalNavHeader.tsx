@@ -127,7 +127,6 @@ const VerticalNavHeader = (props: Props) => {
             <HeaderTitle sx={{ fontSize: 30, ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}>
               {themeConfig.templateName}
             </HeaderTitle>
-            <Typography sx={{ fontSize: 30, ml: 2 }}>Pay</Typography>
           </Box>
 
         </LinkStyled>
