@@ -37,16 +37,14 @@ const LandingPage = (props: any) => {
   return (
     <Box>
       <Typography sx={{
-        color: 'black',
+        color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>Who are you sending</Typography>
       <Typography sx={{
         mb: 5,
-        color: 'black',
+        color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>money to?</Typography>
       <Card sx={{ mb: 8, width: "80%" }}>
@@ -72,7 +70,6 @@ const LandingPage = (props: any) => {
       <Typography sx={{
         mb: 5, color: 'black',
         fontSize: 18,
-        fontFamily: 'Figtree',
         fontWeight: '700',
       }}>Past recipient</Typography>
 
@@ -134,7 +131,7 @@ const SendMoney = () => {
         </IconButton>
         <Typography sx={{ color: "#141516", fontSize: "18px", fontWeight: "700" }}>Send Money</Typography>
       </Typography>
-      <Card sx={{ width: '80%', background: 'white', boxshadow: "0px 0px 8px #EEF1F9", borderRadius: "24px" }} >
+      <Card sx={{ width: '80%', background: 'white', boxShadow: "0px 0px 8px #EEF1F9", borderRadius: "24px" }} >
         <Box sx={{ p: 10 }}>
           <Typography sx={{ mb: 5, fontSize: "24px", color: "#141516", fontWeight: 700 }} variant='h4'>Account Verification</Typography>
 
@@ -150,7 +147,7 @@ const SendMoney = () => {
                   return (
                     <Step key={index} onClick={() => setActiveStep(index + 1)}>
                       <StepLabel sx={{ color: "black" }}>
-                        <Typography >{step.title}</Typography>
+                        <Typography>{step.title}</Typography>
                       </StepLabel>
                     </Step>
                   )

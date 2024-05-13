@@ -24,14 +24,12 @@ const RecipientPage = (props: any) => {
         <Typography sx={{
           color: '#141516',
           fontSize: 32,
-          fontFamily: 'Figtree',
           fontWeight: '600',
         }}>Enter bank account </Typography>
         <Typography sx={{
           mb: 5,
           color: '#141516',
           fontSize: 32,
-          fontFamily: 'Figtree',
           fontWeight: '600',
         }}>details</Typography>
 

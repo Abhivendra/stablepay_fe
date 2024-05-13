@@ -46,9 +46,9 @@ const ActivityTimeline = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontFamily: 'Figtree', fontWeight: '600' }}>Add Account Details</Typography>
+                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontWeight: '600' }}>Add Account Details</Typography>
               </Box>
-              <Typography sx={{ mb: 3, color: 'rgba(20;21;22;0.60)', fontSize: 14, fontFamily: 'Figtree', fontWeight: '400' }}>Your company or organisation details.</Typography>
+              <Typography sx={{ mb: 3, color: 'rgba(20;21;22;0.60)', fontSize: 14, fontWeight: '400' }}>Your company or organisation details.</Typography>
             </TimelineContent>
           </TimelineItem>
 
@@ -66,9 +66,9 @@ const ActivityTimeline = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontFamily: 'Figtree', fontWeight: '600' }}>Upload Documents</Typography>
+                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontWeight: '600' }}>Upload Documents</Typography>
               </Box>
-              <Typography sx={{ color: 'rgba(20;21;22;0.60)', fontSize: 14, fontFamily: 'Figtree', fontWeight: '400' }}>Submit business or organisation document proof.</Typography>
+              <Typography sx={{ color: 'rgba(20;21;22;0.60)', fontSize: 14, fontWeight: '400' }}>Submit business or organisation document proof.</Typography>
             </TimelineContent>
           </TimelineItem>
 
@@ -86,9 +86,9 @@ const ActivityTimeline = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontFamily: 'Figtree', fontWeight: '600' }}>Documents Verified</Typography>
+                <Typography sx={{ mr: 2, color: '#141516', fontSize: 18, fontWeight: '600' }}>Documents Verified</Typography>
               </Box>
-              <Typography sx={{ mb: 3, color: 'rgba(20;21;22;0.60)', fontSize: 14, fontFamily: 'Figtree', fontWeight: '400' }}>Your payments services has been activated.</Typography>
+              <Typography sx={{ mb: 3, color: 'rgba(20;21;22;0.60)', fontSize: 14, fontWeight: '400' }}>Your payments services has been activated.</Typography>
             </TimelineContent>
           </TimelineItem>
         </Timeline>

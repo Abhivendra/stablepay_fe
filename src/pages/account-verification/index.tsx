@@ -98,7 +98,7 @@ const AccountVerification = () => {
                       <CardContent>
                         <Grid container spacing={6} >
                           <Grid item xs={6} >
-                            <Typography sx={{ mb: 8, color: "#141516", fontFamily: "Figtree", fontSize: "32px", fontStyle: "normal", fontWeight: 600, lineHeight: '150%' }}>Verify your account to
+                            <Typography sx={{ mb: 8, color: "#141516", fontSize: "32px", fontStyle: "normal", fontWeight: 600, lineHeight: '150%' }}>Verify your account to
                               activate payments.</Typography>
                             <Grid container spacing={2} sx={{ padding: 5 }}>
                               <Grid item xs={6}>
@@ -124,8 +124,8 @@ const AccountVerification = () => {
                       </CardContent>
                       <Divider sx={{ color: "rgba(0, 0, 0, 0.15)" }} />
                       <Box sx={{ p: 10 }}>
-                        <Typography sx={{ mt: 5, color: "#141516", fontSize: "24px", fontWeight: 700, fontFamily: "Plus Jakarta Sans" }}>Just 3 steps process </Typography>
-                        <Typography sx={{ mb: 5, color: "#141516", fontSize: "24px", fontWeight: 700, fontFamily: "Plus Jakarta Sans" }}> and your are ready!</Typography>
+                        <Typography sx={{ mt: 5, color: "#141516", fontSize: "24px", fontWeight: 700, }}>Just 3 steps process </Typography>
+                        <Typography sx={{ mb: 5, color: "#141516", fontSize: "24px", fontWeight: 700, }}> and your are ready!</Typography>
                         <Stepper orientation='vertical'>
                           {steps.map((step, index) => (
                             <Step key={step.label + index}>

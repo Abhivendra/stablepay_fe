@@ -8,14 +8,12 @@ const ReviewPage = (props: any) => {
       <Typography sx={{
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>Confirm your payment  </Typography>
       <Typography sx={{
         mb: 5,
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>details</Typography>
 
@@ -24,7 +22,6 @@ const ReviewPage = (props: any) => {
           <Typography sx={{
             color: 'black',
             fontSize: 24,
-            fontFamily: 'Figtree',
             fontWeight: '600',
           }}> Transfer Details </Typography>
           <Grid flexDirection={'row'} container>
@@ -32,7 +29,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>You Send</Typography>
             </Grid>
@@ -40,7 +36,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 24,
-                fontFamily: 'Figtree',
                 fontWeight: '700',
               }}>1.3M</Typography>
             </Grid>
@@ -49,7 +44,6 @@ const ReviewPage = (props: any) => {
                 ml: 2,
                 color: 'black',
                 fontSize: 16,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>KES</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
@@ -63,7 +57,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Total Fees Deducted</Typography>
             </Grid>
@@ -71,7 +64,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>290 USD</Typography>
             </Grid>
@@ -82,7 +74,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Total amount we’ll convert</Typography>
             </Grid>
@@ -90,7 +81,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>9710 USD</Typography>
             </Grid>
@@ -101,7 +91,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>Recipient Gets</Typography>
             </Grid>
@@ -109,7 +98,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>160M IDR</Typography>
             </Grid>
@@ -122,7 +110,6 @@ const ReviewPage = (props: any) => {
           <Typography sx={{
             color: 'black',
             fontSize: 24,
-            fontFamily: 'Figtree',
             fontWeight: '600',
           }}> Recipient Details </Typography>
           <Grid flexDirection={'row'} container>
@@ -130,7 +117,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Account holder name</Typography>
             </Grid>
@@ -138,7 +124,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Nuryanti</Typography>
             </Grid>
@@ -149,7 +134,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Account No</Typography>
             </Grid>
@@ -157,7 +141,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>98383838383</Typography>
             </Grid>
@@ -168,7 +151,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Email ID</Typography>
             </Grid>
@@ -176,7 +158,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Nuryanti@gmail.com</Typography>
             </Grid>
@@ -187,7 +168,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Bank Name</Typography>
             </Grid>
@@ -195,7 +175,6 @@ const ReviewPage = (props: any) => {
               <Typography sx={{
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '400',
               }}>Bank Mandiri</Typography>
             </Grid>

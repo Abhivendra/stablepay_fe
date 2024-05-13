@@ -17,7 +17,6 @@ const AccountIdentifyProof = (props: any) => {
         pt: 5,
         color: 'black',
         fontSize: 18,
-        fontFamily: 'Figtree',
         fontWeight: '700',
         display: "flex", alignItems: "center", justifyContent: "center"
       }}>You need to submit you business documents as a proof of identity</Typography>

@@ -15,14 +15,12 @@ const AmountPage = (props: any) => {
       <Typography sx={{
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>Enter amount to be </Typography>
       <Typography sx={{
         mb: 5,
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>sent</Typography>
 
@@ -33,7 +31,7 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
+
                 fontWeight: '600',
 
               }}>You Send</Typography>
@@ -42,7 +40,7 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 24,
-                fontFamily: 'Figtree',
+
                 fontWeight: '700',
               }}>1.3M</Typography>
             </Grid>
@@ -51,7 +49,7 @@ const AmountPage = (props: any) => {
                 ml: 2,
                 color: 'black',
                 fontSize: 16,
-                fontFamily: 'Figtree',
+
                 fontWeight: '600',
               }}>KES</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
@@ -71,23 +69,18 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
-
               }}>Amount Deducted</Typography>
               <Typography sx={{
                 color: '#537CE7',
                 fontSize: 14,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
-
               }}>View Full Breakup</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
                 color: 'black',
                 fontSize: 24,
-                fontFamily: 'Figtree',
                 fontWeight: '700',
               }}>290</Typography>
             </Grid>
@@ -95,7 +88,6 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 16,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>USD</Typography>
               <IconButton />
@@ -113,16 +105,13 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 18,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
-
               }}>Recipient Gets</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
                 color: 'black',
                 fontSize: 24,
-                fontFamily: 'Figtree',
                 fontWeight: '700',
               }}>160M</Typography>
             </Grid>
@@ -130,7 +119,6 @@ const AmountPage = (props: any) => {
               <Typography sx={{
                 color: 'black',
                 fontSize: 16,
-                fontFamily: 'Figtree',
                 fontWeight: '600',
               }}>IDR</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>

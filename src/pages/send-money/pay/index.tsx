@@ -45,14 +45,12 @@ const PayPage = () => {
       <Typography sx={{
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>Choose your Payment </Typography>
       <Typography sx={{
         mb: 5,
         color: '#141516',
         fontSize: 32,
-        fontFamily: 'Figtree',
         fontWeight: '600',
       }}>method</Typography>
 
@@ -66,7 +64,6 @@ const PayPage = () => {
                   mt: 8,
                   color: 'black',
                   fontSize: 24,
-                  fontFamily: 'Figtree',
                   fontWeight: '600',
                 }}>{paymentType.type}</Typography>
                 {
@@ -79,7 +76,7 @@ const PayPage = () => {
                         <Typography sx={{
                           color: 'black',
                           fontSize: 18,
-                          fontFamily: 'Figtree',
+
                           fontWeight: '600',
                         }}>{item.title}</Typography>
                       </Grid>
