@@ -14,10 +14,10 @@ const users: UserDataType[] = [
   {
     id: 1,
     role: 'admin',
-    password: 'admin',
-    fullName: 'John Doe',
+    password: 'querty123',
+    fullName: 'Aditi Haldar',
     username: 'johndoe',
-    email: 'admin@yopmail.com'
+    email: 'admin@stablpay.fi'
   },
   {
     id: 2,

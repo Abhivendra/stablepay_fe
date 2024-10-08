@@ -37,7 +37,7 @@ const ReviewPage = (props: any) => {
                 color: 'black',
                 fontSize: 24,
                 fontWeight: '700',
-              }}>1.3M</Typography>
+              }}>1,620,000</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -65,7 +65,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>290 USD</Typography>
+              }}>48,598 KES</Typography>
             </Grid>
           </Grid>
 
@@ -82,7 +82,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>9710 USD</Typography>
+              }}>1,070,608 INR</Typography>
             </Grid>
           </Grid>
 
@@ -125,7 +125,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>Nuryanti</Typography>
+              }}>Apollo Hospitals</Typography>
             </Grid>
           </Grid>
 
@@ -142,7 +142,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>98383838383</Typography>
+              }}>9876123456</Typography>
             </Grid>
           </Grid>
 
@@ -159,7 +159,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>Nuryanti@gmail.com</Typography>
+              }}>billing@apollohospitals.com</Typography>
             </Grid>
           </Grid>
 
@@ -176,7 +176,7 @@ const ReviewPage = (props: any) => {
                 color: 'rgba(20 21 22 0.60)',
                 fontSize: 18,
                 fontWeight: '400',
-              }}>Bank Mandiri</Typography>
+              }}>HDFC Bank</Typography>
             </Grid>
           </Grid>
         </Box>

@@ -25,7 +25,7 @@ const UserList = ({ apiData }: any) => {
   const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 10 })
   const [remittanceTrail, setRemittanceTrail] = useState([{
     time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-    message: "1.3 M KES received from customer"
+    message: "1,620,000 KES received from the customer"
   }]);
   const [connectedToWallet, setConnectedToWallet] = useState<boolean>(false);
   const [defaultAccount, setDefaultAccount] = useState<string>('');
@@ -34,9 +34,9 @@ const UserList = ({ apiData }: any) => {
     {
       "id": 1,
       "sender": "Micheal",
-      "senderAmount": "1.3M KES",
-      "receiver": "Nuryanti",
-      "receiverAmount": "160M IDR",
+      "senderAmount": "1,620,000 KES",
+      "receiver": "Apollo Hospitals",
+      "receiverAmount": "1,070,608 INR",
       "status": "INITIATEDFROMCUSTOMER"
     }
   ]);
@@ -59,7 +59,7 @@ const UserList = ({ apiData }: any) => {
     setRemittanceTrail((prev: any) => {
       return [...prev, {
         time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-        message: "1.3 M KES converted to 10000 USDT"
+        message: "1,620,000 KES converted to 12542.9 USDT"
       }];
     });
 
@@ -67,7 +67,7 @@ const UserList = ({ apiData }: any) => {
       setRemittanceTrail((prev: any) => {
         return [...prev, {
           time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-          message: "On Ramp partner sent 9950 USDT (deducted 0.45% fee)"
+          message: "Onramp partner sent USDT 12542.9 (Deducted 0.45% fee)"
         }];
       });
     }, 5000);
@@ -84,7 +84,7 @@ const UserList = ({ apiData }: any) => {
 
       return [...prev, {
         time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-        message: "Transferred  9750 USDT (deducted 2% fee) from Kenya treasury wallet"
+        message: "Transferred 12542.9 USDT (deducted 2% from Kenya treasury wallet)"
       }];
     });
 
@@ -448,14 +448,14 @@ const UserList = ({ apiData }: any) => {
     setRemittanceTrail((prev: any) => {
       return [...prev, {
         time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-        message: "Received 9750 USDT in Indonesia treasury wallet"
+        message: "Received 12542.9 USDT from onramp partner in INR treasury wallet"
       }];
     })
     setTimeout(() => {
       setRemittanceTrail((prev: any) => {
         return [...prev, {
           time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-          message: "Transferred 9750 USDT to Off Ramp partner"
+          message: "Transferred 12,166 USDT to INR offramp partner"
         }];
       })
     }, 5000)
@@ -463,7 +463,7 @@ const UserList = ({ apiData }: any) => {
       setRemittanceTrail((prev: any) => {
         return [...prev, {
           time: moment().format('MMMM Do YYYY, h:mm:ss a'),
-          message: "Off Ramp partner transferred 9700 equivalent in IDR to recipient(deducted 0.45% fee)"
+          message: "Offramp partner transfers 1,070,608 INR to Apollo Hospitals"
         }];
       });
     }, 5000)

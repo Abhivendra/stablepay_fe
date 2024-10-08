@@ -52,8 +52,8 @@ const schema = yup.object().shape({
 })
 
 const defaultValues = {
-  password: 'admin',
-  email: 'admin@yopmail.com'
+  password: 'querty123',
+  email: 'admin@stablpay.fi'
 }
 
 interface FormData {

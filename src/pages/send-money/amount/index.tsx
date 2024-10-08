@@ -42,7 +42,7 @@ const AmountPage = (props: any) => {
                 fontSize: 24,
 
                 fontWeight: '700',
-              }}>1.3M</Typography>
+              }}>1,620,000</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
@@ -70,7 +70,7 @@ const AmountPage = (props: any) => {
                 color: 'black',
                 fontSize: 18,
                 fontWeight: '600',
-              }}>Amount Deducted</Typography>
+              }}>Our Fees</Typography>
               <Typography sx={{
                 color: '#537CE7',
                 fontSize: 14,
@@ -82,14 +82,14 @@ const AmountPage = (props: any) => {
                 color: 'black',
                 fontSize: 24,
                 fontWeight: '700',
-              }}>290</Typography>
+              }}>48,598</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
                 color: 'black',
                 fontSize: 16,
                 fontWeight: '600',
-              }}>USD</Typography>
+              }}>KES</Typography>
               <IconButton />
             </Grid>
           </Grid>
@@ -113,14 +113,14 @@ const AmountPage = (props: any) => {
                 color: 'black',
                 fontSize: 24,
                 fontWeight: '700',
-              }}>160M</Typography>
+              }}>1,070,608</Typography>
             </Grid>
             <Grid item xs={2} sx={{ display: 'flex', alignItems: "center", justifyContent: 'flex-end' }}>
               <Typography sx={{
                 color: 'black',
                 fontSize: 16,
                 fontWeight: '600',
-              }}>IDR</Typography>
+              }}>INR</Typography>
               <IconButton onClick={() => console.log("chevron-down")}>
                 <Icon icon='tabler:chevron-down' fontSize={20} />
               </IconButton>
